@@ -1,0 +1,11 @@
+var URL = "https://tools.aimylogic.com/api/data/${userId}";
+var request = new XMLHttpRequest();
+request.open("GET",URL);
+request.responseType = "json";
+request.send();
+request.onload = function(){
+  var resp = request.response;
+  var header = document.querySelector("header");
+  var myH1 = document.createElement("h1");
+  myH1.textContent = jsonObj["note"];
+  header.appendChild(myH1);
